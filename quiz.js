@@ -145,9 +145,11 @@ function onShowAnswers() {
     onReset();
   });
   answerPoints.forEach((item, idx) => {
+    timer_ui.innerHTML = "Time is over";
     answerPoints[idx].disabled = false;
     let showClickedPoint = item.innerText;
     item.addEventListener("click", () => {
+      quiz_round.innerHTML = item.innerHTML;
       answers_ui.forEach((answer, idx) => {
         answers_ui[idx].style.background = "lightblue";
       });
